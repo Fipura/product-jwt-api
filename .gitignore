@@ -39,3 +39,6 @@ Thumbs.db
 
 # Environment files (optional)
 .env
+
+# Security
+src/main/resources/application.properties

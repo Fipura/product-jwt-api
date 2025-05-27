@@ -32,7 +32,7 @@ public class JwtService {
 
     public boolean isTokenValid(String token, User user){
         final String username = extractUsername(token);
-        return (username.equals(user.getUsername()) && !isTokenExprired(token));
+        return (username.equals(user.getUsername()) && !isTokenExpired(token));
     }
 
     public String extractUsername(String token) {
@@ -46,6 +46,10 @@ public class JwtService {
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
+    }
+
+    private boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date());
     }
 
     public Claims extractAllClaims(String token) {
