@@ -1,5 +1,6 @@
 package com.pedro.productjwtapi.config;
 
+import com.pedro.productjwtapi.service.JwtAuthenticationFilter;
 import com.pedro.productjwtapi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
