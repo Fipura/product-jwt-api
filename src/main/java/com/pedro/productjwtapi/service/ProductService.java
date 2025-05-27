@@ -32,7 +32,7 @@ public class ProductService {
                     existingProduct.setName(product.getName());
                     existingProduct.setDescription(product.getDescription());
                     existingProduct.setPrice(product.getPrice());
-                    return productRepository.save(existingProduct)
+                    return productRepository.save(existingProduct);
                 });
     }
 
