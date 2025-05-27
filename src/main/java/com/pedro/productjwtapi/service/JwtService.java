@@ -30,9 +30,9 @@ public class JwtService {
                 .compact();
     }
 
-    public boolean isTokenValid(String token, User user){
-        final String username = extractUsername(token);
-        return (username.equals(user.getUsername()) && !isTokenExpired(token));
+    public boolean isTokenValid(String token, String username){
+        final String user = extractUsername(token);
+        return (username.equals(user) && !isTokenExpired(token));
     }
 
     public String extractUsername(String token) {
